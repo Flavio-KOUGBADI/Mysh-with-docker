@@ -48,13 +48,14 @@ void array_to_list(list_t **head, char **env)
     for (int i = 0; env[i]; i++) {
         copy = my_strdup(env[i]);
         var = strtok(copy, "=");
-	/* if (my_strcmp(var, "LS_COLORS") == 0) { */
-	/*     copy += 10; */
-	/*     add(head, var, copy); */
-	/*     printf("value = %s\n", copy); */
-	/*     free(copy); */
-	/*     continue; */
-	/* } */
+	if (my_strcmp(var, "LS_COLORS") == 0) {
+            env[i] += 10;
+            value = env[i];
+            printf("value == %s\n", value);
+            add(head, var, env[i]);
+            free(copy);
+            continue;
+        }
         value = strtok(NULL, "=");
         add(head, var, value);
         free(copy);

@@ -104,11 +104,11 @@ static void execute(list_t **head, char **array, char *path)
     if (errno == 8) {
         str_error = strerror(errno);
         my_printf("%s: %s. Binary file not executable.\n", array[0], str_error);
-        //(*head)->last_exit = 1;
+        (*head)->last_exit = 1;
         exit(1);
     }
     perror(array[0]);
-    //(*head)->last_exit = 1;
+    (*head)->last_exit = 1;
     exit(1);
 }
 
@@ -131,13 +131,13 @@ static void in_parent(list_t **head, int *status)
     if (WIFSIGNALED(*status)) {
         if (WCOREDUMP(*status)) {
             funct1(status);
-            //(*head)->last_exit = *status;
+            (*head)->last_exit = *status;
             return;
         }
         funct1(status);
     }
     if (WIFEXITED(*status)) {
-        //(*head)->last_exit = WEXITSTATUS(*status);
+        (*head)->last_exit = WEXITSTATUS(*status);
         return;
     }
 }
@@ -172,6 +172,6 @@ void execute_line(list_t **head, char **array)
         (*head)->last_exit = execute_bultins(head, array);
         return;
     }
-    //(*head)->last_exit = execute_binary(head, array);
+    (*head)->last_exit = execute_binary(head, array);
     return;
 }

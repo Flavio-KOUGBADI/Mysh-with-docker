@@ -1,7 +1,7 @@
 gérer setenv @bof ppp ✅
 setenv bod@ppp papa   ✅
-setenv _papa doit papa
-ajouter à la queue de la liste chainée après le projet
+setenv _papa doit papa✅
+ajouter à la queue de la liste chainée après le projet ✅
 en cas de segfault retourner 139 puis en cas d'exit, exit 0
-Améliorer le strtok
+Améliorer le strtok 😷
 gérer cd ~/path en configurant ~ = $HOME

@@ -14,7 +14,6 @@ void my_exit(char **array, list_t **head)
     if (my_strcmp(array[0], "exit") == 0) {
         free_array(array);
         exit(0);
-        //exit((*head)->last_exit);
     }
 }
 

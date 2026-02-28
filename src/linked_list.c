@@ -25,11 +25,18 @@ list_t *create_node(char *variable, char *value)
 void add(list_t **head, char *variable, char *value)
 {
     list_t *tmp = create_node(variable, value);
+    list_t *last = *head;
 
     if (!tmp)
         return;
-    tmp->next = *head;
-    *head = tmp;
+    if (*head == NULL) {
+        *head = tmp;
+        (*head)->next = NULL;
+        return;
+    }
+    for (; last->next; last = last->next);
+    last->next = tmp;
+    last->next->next = NULL;
 }
 
 void array_to_list(list_t **head, char **env)

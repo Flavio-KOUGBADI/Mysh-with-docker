@@ -6,7 +6,6 @@
 */
 
 #include "../include/my.h"
-
 void print_env(char **array, list_t **head)
 {
     if (my_strcmp(array[0], "env") != 0 && my_strcmp(array[0], "setenv") != 0)
@@ -18,12 +17,10 @@ void print_env(char **array, list_t **head)
 
 void add_env(list_t **head, char *var, char *value)
 {
-    int found = 0;
     list_t *tmp = *head;
 
     for (; tmp != NULL; tmp = tmp->next) {
         if (my_strcmp(tmp->variable, var) == 0) {
-            found = 1;
             free(tmp->value);
             tmp->value = my_strdup(value);
             return;
@@ -54,7 +51,6 @@ static void manage_setenv(char **array, list_t **head)
 
 void my_setenv(char **array, list_t **head)
 {
-    char *str = NULL;
     int ac = 0;
 
     if (my_strcmp(array[0], "setenv") != 0)

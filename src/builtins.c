@@ -62,6 +62,7 @@ void my_setenv(char **array, list_t **head)
     }
     if (my_strcmp(array[0], "setenv") == 0 && ac > 3) {
         write(2, "setenv: Too many arguments.\n", 29);
+        (*head)->last_exit = 1;
         return;
     }
     manage_setenv(array, head);

@@ -29,7 +29,7 @@ int big_check(char **array, list_t **head)
 {
     int is_present = 0;
 
-    for (int i = 0; array[1][i]; i++) {
+    for (int i = 1; array[1][i]; i++) {
         if ((array[1][i] >= 0 && array[1][i] <= 64) ||
             (array[1][i] >= 91 && array[1][i] <= 96) ||
             (array[1][i] >= 123 && array[1][i] <= 127)) {

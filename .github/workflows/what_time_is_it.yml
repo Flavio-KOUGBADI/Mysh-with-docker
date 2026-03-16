@@ -5,6 +5,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Je procède au lancement des tests automatisés"
+      - run: echo "\e[0;35mJe procède au lancement des tests automatisés"
       - run: date
-

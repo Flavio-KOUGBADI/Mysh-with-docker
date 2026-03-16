@@ -9,6 +9,6 @@ jobs:
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url:
-            git@github.com:EpitechPGE1-2025/G-DOP-200-COT-2-1-bschocolatine-19.git
+            git@github.com:Flavio-KOUGBADI/Dump.git
           ssh_private_key:
             ${{ secrets.GIT_SSH_PRIVATE_KEY}}

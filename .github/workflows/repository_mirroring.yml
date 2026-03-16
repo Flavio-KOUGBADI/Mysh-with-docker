@@ -3,12 +3,12 @@ run-name: Mirroring Repository
 on: [push]
 jobs:
   mirror_repository:
-  runs-on: alpine-latest
-  steps:
-    - uses: actions/checkout@v4
-    - uses: pixta-dev/repository-mirroring-action@v1
-      with:
-        target_repo_url:
-          git@github.com:EpitechPGE1-2025/G-DOP-200-COT-2-1-bschocolatine-19.git
-        ssh_private_key:
-          ${{ secrets.GIT_SSH_PRIVATE_KEY}}
+    runs-on: alpine-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pixta-dev/repository-mirroring-action@v1
+        with:
+          target_repo_url:
+            git@github.com:EpitechPGE1-2025/G-DOP-200-COT-2-1-bschocolatine-19.git
+          ssh_private_key:
+            ${{ secrets.GIT_SSH_PRIVATE_KEY}}

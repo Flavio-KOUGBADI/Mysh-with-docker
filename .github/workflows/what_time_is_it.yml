@@ -1,5 +1,5 @@
-name: xxxxx
-run-name: yyyyyy
+name: Test n¹
+run-name: Execute some commands as tests
 on: [push]
 jobs:
   build:

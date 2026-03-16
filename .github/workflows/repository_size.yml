@@ -1,0 +1,10 @@
+name: Task4
+run-name: Get the repository size
+on: [push]
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Branc name is ..." 
+      - run: du -skh --exclude=".git"
+      - uses: action/checkout
